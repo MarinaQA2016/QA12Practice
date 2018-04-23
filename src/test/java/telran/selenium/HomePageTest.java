@@ -31,7 +31,7 @@ public class HomePageTest extends TestBase {
 
     //Log.info("---- Test allElementsInRussian is executed -----");
     homepage.clickLangRussian();
-    //Log.info("User chooses Russian language");
+    //Log.info("User presses Russian language button");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     //Log.info("Timeout - wait 30 sec");
