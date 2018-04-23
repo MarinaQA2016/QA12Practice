@@ -91,6 +91,7 @@ public class HomePageHelper extends PageBase {
 
     //another elements from HomePage verification, russian language
     if (!allMenuCommandsInLang("Rus")) return false;
+    Log.info("allElementsInRus: all elements are in Russian");
     return true;
   }
 
