@@ -3,8 +3,10 @@ package telran.selenium;
 import java.io.IOException;
 import java.net.URL;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Capabilities;
+import telran.selenium.LogLog4j;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -20,6 +22,7 @@ public class TestBase {
   protected static URL gridHubUrl = null;
   protected static String baseUrl;
   protected static Capabilities capabilities;
+  private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
   protected WebDriver driver;
 
@@ -42,4 +45,6 @@ public class TestBase {
   public void tearDown() {
     WebDriverPool.DEFAULT.dismissAll();
   }
+
+
 }
