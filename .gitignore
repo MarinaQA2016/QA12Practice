@@ -82,6 +82,6 @@ buildNumber.properties
 /pom.xml
 /QA12PR.iml
 
-!/.gitignore
+/.gitignore
 /src/test/resources/debug.properties
 /src/test/resources/testng.xml
