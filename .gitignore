@@ -79,7 +79,7 @@ buildNumber.properties
 # Exclude maven wrapper
 !/.mvn/wrapper/maven-wrapper.jar
 !/pom.xml
-/QA12PR.iml
+!/QA12PR.iml
 
 !/.gitignore
 !/src/test/resources/debug.properties
