@@ -29,12 +29,12 @@ public class HomePageTest extends TestBase {
   @Test
   public void allElemetsInRussian() {
 
-    //Log.info("---- Test allElementsInRussian is executed -----");
+    Log.info("---- Test allElementsInRussian is executed -----");
     homepage.clickLangRussian();
-    //Log.info("User presses Russian language button");
+    Log.info("User presses Russian language button");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-    //Log.info("Timeout - wait 30 sec");
+    Log.info("Timeout - wait 30 sec");
     Assert.assertTrue(homepage.allElementsInRus());
   }
 
