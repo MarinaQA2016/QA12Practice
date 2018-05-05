@@ -25,36 +25,38 @@ public class HomePageTest extends TestBase {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  // ---this test verifies that all elements on HomePage screen in Russian ---
+  // ---this test verifies that all elements on HomePage screen are in Russian ---
   @Test
   public void allElemetsInRussian() {
 
     Log.info("---- Test allElementsInRussian is executed -----");
-    homepage.clickLangRussian();
     Log.info("User presses Russian language button");
+    homepage.clickLangRussian();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     Log.info("Timeout - wait 30 sec");
     Assert.assertTrue(homepage.allElementsInRus());
   }
 
-  // --- this test verifies that all elements on HomePage screen in English ---
+  // --- this test verifies that all elements on HomePage screen are in English ---
   @Test
   public void allElemetsInEnglish() {
-    //driver.get(baseUrl);
-    System.out.println("driver was started");
+    Log.info("---- Test allElementsInEnglish is executed -----");
+    Log.info("User presses English language button");
     homepage.clickLangEnglish();
+    Log.info("Timeout - wait 30 sec");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    homepage.writeTextOfMenuCommands();
+    //homepage.writeTextOfMenuCommands();
     Assert.assertTrue(homepage.allElementsInEng());
   }
 
-  // --- this test verifies that all elements on HomePage screen in Hebrew ---
+  // --- this test verifies that all elements on HomePage screen are in Hebrew ---
   @Test
   public void allElemetsInHebrew() {
-    //driver.get(baseUrl);
-    System.out.println("driver was started");
+    Log.info("---- Test allElementsInHebrew is executed -----");
+    Log.info("User presses Hebrew language button");
     homepage.clickLangHebrew();
+    Log.info("Timeout - wait 30 sec");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     //homepage.writeTextOfMenuCommands();
     Assert.assertTrue(homepage.allElementsInHebrew());
