@@ -99,7 +99,8 @@ public class HomePageHelper extends PageBase {
     return this;
   }
   public HomePageHelper clickMarketPlace(){
-    this.marketPlaceMenu.click();
+     this.marketPlaceMenu.click();
+
     return this;
   }
 

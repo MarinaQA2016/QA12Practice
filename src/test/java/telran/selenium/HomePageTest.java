@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import telran.selenium.pages.HomePageHelper;
+import telran.selenium.pages.MarketPlacePageHelper_Marina;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,12 +16,14 @@ public class HomePageTest extends TestBase {
 
   private HomePageHelper homepage;
   private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
+  private MarketPlacePageHelper_Marina marketPlace;
 
 
   @BeforeMethod
   public void initPageObjects() {
 
     homepage = PageFactory.initElements(driver, HomePageHelper.class);
+    marketPlace = PageFactory.initElements(driver, MarketPlacePageHelper_Marina.class);
     driver.get(baseUrl);
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
@@ -56,10 +59,21 @@ public class HomePageTest extends TestBase {
     Log.info("---- Test allElementsInHebrew is executed -----");
     Log.info("User presses Hebrew language button");
     homepage.clickLangHebrew();
+
     Log.info("Timeout - wait 30 sec");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   // System.out.println(homepage.textFromBuyersAbilities());
     //homepage.writeTextOfMenuCommands();
     Assert.assertTrue(homepage.allElementsInHebrew());
   }
+
+  @Test
+  public void goToMarketPlace(){
+    homepage.clickMarketPlace();
+    marketPlace.waitUntilPageIsLoaded();
+    Assert.assertTrue(marketPlace.isMarketPlacePage());
+  }
+
+
 
 }
