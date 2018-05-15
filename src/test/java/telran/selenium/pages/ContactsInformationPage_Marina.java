@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by Inka on 14-May-18.
  */
+
 public class ContactsInformationPage_Marina extends PageBase {
 
     @FindBy(xpath = "//*[contains(text(),'info@feedman.co.il')]")
