@@ -1,6 +1,7 @@
 package telran.selenium.pages;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -25,6 +26,10 @@ public class MarketPlacePageHelper_Marina extends PageBase {
     @FindBy(css = ".divTop")
     List<WebElement> topOptions;
 
+    @FindBy(xpath = "//*[@ng-click=\"toPage('contacts')\"]")
+    WebElement contactsMenu;
+
+
     public MarketPlacePageHelper_Marina(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -46,11 +51,17 @@ public class MarketPlacePageHelper_Marina extends PageBase {
     }
 
     private WebElement defineEnterOption() {
+
         for (WebElement el : topOptions) {
             if (el.getText().equals("Вход/Регистрация"))
                 return el;
+
         }
+
         return null;
     }
 
+    public void clickContactsMenu() {
+        contactsMenu.click();
+    }
 }
