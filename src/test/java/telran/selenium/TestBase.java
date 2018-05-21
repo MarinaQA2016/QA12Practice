@@ -38,6 +38,7 @@ public class TestBase {
 
   @BeforeMethod
   public void initWebDriver() {
+    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
     driver = WebDriverPool.DEFAULT.getDriver(gridHubUrl, capabilities);
   }
 
