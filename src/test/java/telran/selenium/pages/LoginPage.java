@@ -10,7 +10,7 @@ public class LoginPage extends PageBase {
     WebElement confirmationOfEntry;
 
     @FindBy(xpath = "//p[contains(text(),'Вход/Регистрация')]")
-    WebElement cansel;
+    WebElement cancel;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -26,10 +26,10 @@ public class LoginPage extends PageBase {
     }
 
     public void waitUntilPageIsLoadedCansel() {
-        this.waitUntilIsLoadedCustomTime(cansel,40);
+        this.waitUntilIsLoadedCustomTime(cancel,40);
     }
 
     public boolean isLoginPageCansel() {
-        return exists(cansel);
+        return exists(cancel);
     }
 }
