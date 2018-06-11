@@ -42,7 +42,11 @@ public abstract class PageBase {
   }
 
 
-
+  public void typeTextField(WebElement el, String text){
+    el.click();
+    el.clear();
+    el.sendKeys(text);
+  }
 
   public String getPageUrl() {
 
@@ -75,6 +79,13 @@ public abstract class PageBase {
   public void waitUntilIsLoadedCustomTime(WebElement element, int time) {
     try {
       new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOf(element));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+  public void waitUntilAlertIsLoaded(int time){
+    try {
+      new WebDriverWait(driver, 40).until(ExpectedConditions.alertIsPresent());
     } catch (Exception e) {
       e.printStackTrace();
     }

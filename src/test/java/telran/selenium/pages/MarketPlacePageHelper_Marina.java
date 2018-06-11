@@ -29,6 +29,9 @@ public class MarketPlacePageHelper_Marina extends PageBase {
     @FindBy(xpath = "//*[@ng-click=\"toPage('contacts')\"]")
     WebElement contactsMenu;
 
+    @FindBy(xpath = "//div[@ng-show=\"user.login == 'guest'\"]")
+    WebElement buttonLoginRegistration;
+
 
     public MarketPlacePageHelper_Marina(WebDriver driver) {
         super(driver);
@@ -63,5 +66,9 @@ public class MarketPlacePageHelper_Marina extends PageBase {
 
     public void clickContactsMenu() {
         contactsMenu.click();
+    }
+
+    public void clickLoginRegistrationButton() {
+        this.buttonLoginRegistration.click();
     }
 }
