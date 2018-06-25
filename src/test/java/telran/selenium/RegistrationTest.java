@@ -51,10 +51,10 @@ public class RegistrationTest extends TestBase {
     @Test(/*dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationSeller"*/)
     public void goToRegistrationPageSeller(/*String email,String phofen,String userName,
                                            String companyName,String password1 ,String password2*/){
-        String email = "mmmm3@hhhh";
-        String phoneNumber = "8 903 454 24 76";
-        String userName = "Petya3";
-        String companyName = "R&K3";
+        String email = "mmmm99@hhhh";
+        String phoneNumber = "8 903 454 24 99";
+        String userName = "Petya99";
+        String companyName = "R&K99";
         String password1 = "12345678Aa";
         String password2 = "12345678Aa";
         loginRegistrationPage.clickButtonRegistration();

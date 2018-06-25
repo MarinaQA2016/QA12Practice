@@ -27,6 +27,7 @@ public class LoginRegistrationPage extends PageBase {
 
     @FindBy(xpath = "//input[@id='seller']")
     WebElement buttonSeller;
+
     @FindBy(xpath = "//input[@id='buyer']")
     WebElement buttonBuyer;
 
@@ -52,13 +53,13 @@ public class LoginRegistrationPage extends PageBase {
     WebElement offerRegistration;
 
     @FindBy(xpath = "//button[@class='personalPageBtnRed'][contains(text(),'Создать пользователя')]")
-    WebElement buttonCreatUser;
+    WebElement buttonCreateUser;
 
     @FindBy(xpath = "//button[@class='personalPageBtnRed'][contains(text(),'Отмена')]")
-    WebElement buttonCansel;
+    WebElement buttonCancel;
 
     @FindBy(xpath = "//button[@type='button']")
-    WebElement buttonCanselRegistration;
+    WebElement buttonCancelRegistration;
 
 
 
@@ -129,22 +130,22 @@ public class LoginRegistrationPage extends PageBase {
     }
 
     public void clickButtonCreateUser() {
-        buttonCreatUser.click();
+        buttonCreateUser.click();
     }
 
     public boolean isRegistrationPage() {
-        return exists(buttonCreatUser);
+        return exists(buttonCreateUser);
     }
 
     public void clickButtonCancel() {
-        buttonCansel.click();
+        buttonCancel.click();
     }
 
     public void clickButtonBuyer() {
       buttonBuyer.click();
     }
 
-    public void clickButtonCansel() {
-        buttonCanselRegistration.click();
+    public void clickButtonCancelRegistration() {
+        buttonCancelRegistration.click();
     }
 }

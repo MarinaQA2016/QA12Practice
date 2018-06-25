@@ -49,7 +49,7 @@ public class RegistrationAndCancelTest extends TestBase {
         loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
         loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
         loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCansel();
+        loginRegistrationPage.clickButtonCancelRegistration();
         registrationPage.waitUntilPageIsLoadedCansel();
         Assert.assertTrue(registrationPage.isLoginPageCansel());
     }
@@ -66,7 +66,7 @@ public class RegistrationAndCancelTest extends TestBase {
         loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
         loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
         loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCansel();
+        loginRegistrationPage.clickButtonCancelRegistration();
         registrationPage.waitUntilPageIsLoadedCansel();
         Assert.assertTrue(registrationPage.isLoginPageCansel());
     }
