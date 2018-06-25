@@ -57,18 +57,18 @@ public class RegistrationTest extends TestBase {
         String companyName = "R&K99";
         String password1 = "12345678Aa";
         String password2 = "12345678Aa";
-        loginRegistrationPage.clickButtonRegistration();
-        loginRegistrationPage.waitUntilPageLoadedRegistration();
-        loginRegistrationPage.clickButtonSeller();
-        loginRegistrationPage.putTextToFielMailRegistration(email);
-        loginRegistrationPage.putTextToFieldPhoneRegistration(phoneNumber);
-        loginRegistrationPage.putTextToFieldLoginRegistration(userName);
-        loginRegistrationPage.putTextToFieldnewCompanyName(companyName);
-        loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
-        loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
-        loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCreateUser();
-        loginRegistrationPage.waitUntilAlertIsLoaded(40);
+        loginRegistrationPage.clickButtonRegistration()
+                             .waitUntilPageLoadedRegistration()
+                             .clickButtonSeller()
+                             .putTextToFielMailRegistration(email)
+                             .putTextToFieldPhoneRegistration(phoneNumber)
+                             .putTextToFieldLoginRegistration(userName)
+                             .putTextToFieldnewCompanyName(companyName)
+                             .putTextToFieldPasswordRegistration1(password1)
+                             .putTextToFieldPasswordRegistration2(password2)
+                             .clickButtonOfferRegistration()
+                             .clickButtonCreateUser()
+                             .waitUntilAlertIsLoaded(40);
         alert = driver.switchTo().alert();
         System.out.println("Text of the alert: " + alert.getText());
         alert.accept();
@@ -84,18 +84,18 @@ public class RegistrationTest extends TestBase {
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationBuyer")
     public void goToRegistrationPageBuyer(String email,String phofen,String userName,
                                            String companyName,String password1 ,String password2){
-        loginRegistrationPage.clickButtonRegistration();
-        loginRegistrationPage.waitUntilPageLoadedRegistration();
-        loginRegistrationPage.clickButtonBuyer();
-        loginRegistrationPage.putTextToFielMailRegistration(email);
-        loginRegistrationPage.putTextToFieldPhoneRegistration(phofen);
-        loginRegistrationPage.putTextToFieldLoginRegistration(userName);
-        loginRegistrationPage.putTextToFieldnewCompanyName(companyName);
-        loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
-        loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
-        loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCreateUser();
-        loginRegistrationPage.waitUntilAlertIsLoaded(40);
+        loginRegistrationPage.clickButtonRegistration()
+                             .waitUntilPageLoadedRegistration()
+                             .clickButtonBuyer()
+                             .putTextToFielMailRegistration(email)
+                             .putTextToFieldPhoneRegistration(phofen)
+                             .putTextToFieldLoginRegistration(userName)
+                             .putTextToFieldnewCompanyName(companyName)
+                             .putTextToFieldPasswordRegistration1(password1)
+                             .putTextToFieldPasswordRegistration2(password2)
+                             .clickButtonOfferRegistration()
+                             .clickButtonCreateUser()
+                             .waitUntilAlertIsLoaded(40);
         alert = driver.switchTo().alert();
         registrationPage.waitUntilPageLoaded();
         Assert.assertTrue(registrationPage.isRegistrationPage());

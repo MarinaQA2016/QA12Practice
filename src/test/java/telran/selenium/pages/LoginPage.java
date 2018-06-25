@@ -12,6 +12,9 @@ public class LoginPage extends PageBase {
     @FindBy(xpath = "//p[contains(text(),'Вход/Регистрация')]")
     WebElement cancel;
 
+    @FindBy(xpath = "//p[contains(text(),'Личный кабинет')]/..//span [@class ='']")
+    WebElement userRole;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -25,11 +28,16 @@ public class LoginPage extends PageBase {
         return exists(confirmationOfEntry);
     }
 
-    public void waitUntilPageIsLoadedCansel() {
+    public LoginPage waitUntilPageIsLoadedCanсel() {
         this.waitUntilIsLoadedCustomTime(cancel,40);
+        return this;
     }
 
-    public boolean isLoginPageCansel() {
+    public boolean isLoginPageCanсel() {
         return exists(cancel);
+    }
+
+    public String isUserRole(){
+        return userRole.getText();
     }
 }

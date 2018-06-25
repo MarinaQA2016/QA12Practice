@@ -10,26 +10,28 @@ public class RegistrationPage extends PageBase {
     WebElement companyData;
 
     @FindBy(xpath = "//p[contains(text(),'Вход/Регистрация')]")
-    WebElement canselRegistration;
+    WebElement cancelRegistration;
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
 
-    public void waitUntilPageLoaded() {
+    public RegistrationPage waitUntilPageLoaded() {
         this.waitUntilIsLoadedCustomTime(companyData,40);
+        return this;
     }
 
     public boolean isRegistrationPage() {
         return exists(companyData);
     }
 
-    public void waitUntilPageIsLoadedCansel() {
-        this.waitUntilIsLoadedCustomTime(canselRegistration,40);
+    public RegistrationPage waitUntilPageIsLoadedCancel() {
+        this.waitUntilIsLoadedCustomTime(cancelRegistration,40);
+        return this;
     }
 
 
-    public boolean isLoginPageCansel() {
-        return exists(canselRegistration);
+    public boolean isLoginPageCancel() {
+        return exists(cancelRegistration);
     }
 }

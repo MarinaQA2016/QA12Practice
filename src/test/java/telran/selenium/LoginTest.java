@@ -36,59 +36,59 @@ public class LoginTest extends TestBase {
     }
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
     public void authorizationSeller(String email, String password){
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonSubmit();
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonSubmit();
         loginPage.waitUntilPageLoaded();
-        Assert.assertTrue(loginPage.isLoginPage());
+        Assert.assertTrue(loginPage.isLoginPage()&&loginPage.isUserRole().equals("поставщик"));
 
     }
 
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
     public void authorizationBuyer(String email, String password) {
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonSubmit();
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonSubmit();
         loginPage.waitUntilPageLoaded();
-        Assert.assertTrue(loginPage.isLoginPage());
+        Assert.assertTrue(loginPage.isLoginPage()&&loginPage.isUserRole().equals("покупатель"));
     }
 
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
     public void authorizationAdmin(String email, String password) {
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonSubmit();
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonSubmit();
         loginPage.waitUntilPageLoaded();
-        Assert.assertTrue(loginPage.isLoginPage());
+        Assert.assertTrue(loginPage.isLoginPage()&&loginPage.isUserRole().equals("администратор"));
     }
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
     public void authorizationAndCancelSeller(String email, String password) {
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonCancel();
-        loginPage.waitUntilPageIsLoadedCansel();
-        Assert.assertTrue(loginPage.isLoginPageCansel());
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonCancel();
+        loginPage.waitUntilPageIsLoadedCanсel();
+        Assert.assertTrue(loginPage.isLoginPageCanсel());
     }
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
     public void authorizationAndCancelBuyer(String email, String password) {
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonCancel();
-        loginPage.waitUntilPageIsLoadedCansel();
-        Assert.assertTrue(loginPage.isLoginPageCansel());
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonCancel();
+        loginPage.waitUntilPageIsLoadedCanсel();
+        Assert.assertTrue(loginPage.isLoginPageCanсel());
     }
     @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
     public void authorizationAndCancelAdmin(String email, String password) {
-        loginRegistrationPage.waitUntilPageLoaded();
-        loginRegistrationPage.putTextToFieldEmail(email);
-        loginRegistrationPage.putTextToFieldPassword(password);
-        loginRegistrationPage.clickButtonCancel();
-        loginPage.waitUntilPageIsLoadedCansel();
-        Assert.assertTrue(loginPage.isLoginPageCansel());
+        loginRegistrationPage.waitUntilPageLoaded()
+                             .putTextToFieldEmail(email)
+                             .putTextToFieldPassword(password)
+                             .clickButtonCancel();
+        loginPage.waitUntilPageIsLoadedCanсel();
+        Assert.assertTrue(loginPage.isLoginPageCanсel());
     }
 }

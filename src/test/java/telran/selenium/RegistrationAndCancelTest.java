@@ -39,35 +39,35 @@ public class RegistrationAndCancelTest extends TestBase {
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationSeller")
     public void goToRegistrationPageSellerCansel(String email,String phofen,String userName,
                                            String companyName,String password1 ,String password2){
-        loginRegistrationPage.clickButtonRegistration();
-        loginRegistrationPage.waitUntilPageLoadedRegistration();
-        loginRegistrationPage.clickButtonSeller();
-        loginRegistrationPage.putTextToFielMailRegistration(email);
-        loginRegistrationPage.putTextToFieldPhoneRegistration(phofen);
-        loginRegistrationPage.putTextToFieldLoginRegistration(userName);
-        loginRegistrationPage.putTextToFieldnewCompanyName(companyName);
-        loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
-        loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
-        loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCancelRegistration();
-        registrationPage.waitUntilPageIsLoadedCansel();
-        Assert.assertTrue(registrationPage.isLoginPageCansel());
+        loginRegistrationPage.clickButtonRegistration()
+                             .waitUntilPageLoadedRegistration()
+                             .clickButtonSeller()
+                             .putTextToFielMailRegistration(email)
+                             .putTextToFieldPhoneRegistration(phofen)
+                             .putTextToFieldLoginRegistration(userName)
+                             .putTextToFieldnewCompanyName(companyName)
+                             .putTextToFieldPasswordRegistration1(password1)
+                             .putTextToFieldPasswordRegistration2(password2)
+                             .clickButtonOfferRegistration()
+                             .clickButtonCancelRegistration();
+        registrationPage.waitUntilPageIsLoadedCancel();
+        Assert.assertTrue(registrationPage.isLoginPageCancel());
     }
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationBuyer")
     public void goToRegistrationPageBuyerCansel(String email,String phofen,String userName,
                                                  String companyName,String password1 ,String password2){
-        loginRegistrationPage.clickButtonRegistration();
-        loginRegistrationPage.waitUntilPageLoadedRegistration();
-        loginRegistrationPage.clickButtonBuyer();
-        loginRegistrationPage.putTextToFielMailRegistration(email);
-        loginRegistrationPage.putTextToFieldPhoneRegistration(phofen);
-        loginRegistrationPage.putTextToFieldLoginRegistration(userName);
-        loginRegistrationPage.putTextToFieldnewCompanyName(companyName);
-        loginRegistrationPage.putTextToFieldPasswordRegistration1(password1);
-        loginRegistrationPage.putTextToFieldPasswordRegistration2(password2);
-        loginRegistrationPage.clickButtonOfferRegistration();
-        loginRegistrationPage.clickButtonCancelRegistration();
-        registrationPage.waitUntilPageIsLoadedCansel();
-        Assert.assertTrue(registrationPage.isLoginPageCansel());
+        loginRegistrationPage.clickButtonRegistration()
+                             .waitUntilPageLoadedRegistration()
+                             .clickButtonBuyer()
+                             .putTextToFielMailRegistration(email)
+                             .putTextToFieldPhoneRegistration(phofen)
+                             .putTextToFieldLoginRegistration(userName)
+                             .putTextToFieldnewCompanyName(companyName)
+                             .putTextToFieldPasswordRegistration1(password1)
+                             .putTextToFieldPasswordRegistration2(password2)
+                             .clickButtonOfferRegistration()
+                             .clickButtonCancelRegistration();
+        registrationPage.waitUntilPageIsLoadedCancel();
+        Assert.assertTrue(registrationPage.isLoginPageCancel());
     }
 }

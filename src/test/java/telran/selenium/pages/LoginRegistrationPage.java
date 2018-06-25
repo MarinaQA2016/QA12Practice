@@ -67,10 +67,11 @@ public class LoginRegistrationPage extends PageBase {
         super(driver);
     }
 
-    public void waitUntilPageLoaded() {
+    public LoginRegistrationPage waitUntilPageLoaded() {
         this.waitUntilIsLoadedCustomTime(emailField,40);
         this.waitUntilIsLoadedCustomTime(passwordField,40);
         this.waitUntilIsLoadedCustomTime(buttonSubmit,40);
+        return this;
 
     }
 
@@ -78,74 +79,91 @@ public class LoginRegistrationPage extends PageBase {
         return exists(emailField);
     }
 
-    public void putTextToFieldEmail(String text) {
+    public LoginRegistrationPage putTextToFieldEmail(String text) {
         typeTextField(email,text);
+        return this;
     }
-    public void putTextToFieldPassword(String text) {
+    public LoginRegistrationPage putTextToFieldPassword(String text) {
         typeTextField(password,text);
+        return this;
     }
 
-    public void clickButtonSubmit() {
+    public LoginRegistrationPage clickButtonSubmit() {
         buttonSubmit.click();
+        return this;
     }
 
-    public void clickButtonRegistration() {
+    public LoginRegistrationPage clickButtonRegistration() {
         buttonRegistration.click();
+        return this;
     }
 
-    public void waitUntilPageLoadedRegistration() {
+    public LoginRegistrationPage waitUntilPageLoadedRegistration() {
         this.waitUntilIsLoadedCustomTime(registration,40);
+        return  this;
     }
 
-    public void clickButtonSeller() {
+    public LoginRegistrationPage clickButtonSeller() {
         buttonSeller.click();
+        return this;
     }
 
-    public void putTextToFielMailRegistration(String text) {
+    public LoginRegistrationPage putTextToFielMailRegistration(String text) {
         typeTextField(mailRegistration,text);
+        return this;
     }
 
-    public void putTextToFieldPhoneRegistration(String text) {
+    public LoginRegistrationPage putTextToFieldPhoneRegistration(String text) {
         typeTextField(phoneRegistration,text);
+        return this;
     }
 
-    public void putTextToFieldLoginRegistration(String text) {
+    public LoginRegistrationPage putTextToFieldLoginRegistration(String text) {
         typeTextField(nameUser,text);
+        return this;
     }
 
-    public void putTextToFieldnewCompanyName(String text) {
+    public LoginRegistrationPage putTextToFieldnewCompanyName(String text) {
         typeTextField(nameCompany,text);
+        return this;
     }
 
-    public void putTextToFieldPasswordRegistration1(String text) {
+    public LoginRegistrationPage putTextToFieldPasswordRegistration1(String text) {
         typeTextField(passwordRegistration1,text);
+        return this;
     }
 
-    public void putTextToFieldPasswordRegistration2(String text) {
+    public LoginRegistrationPage putTextToFieldPasswordRegistration2(String text) {
         typeTextField(passwordRegistration2,text);
+        return this;
     }
 
-    public void clickButtonOfferRegistration() {
+    public LoginRegistrationPage clickButtonOfferRegistration() {
         offerRegistration.click();
+        return this;
     }
 
-    public void clickButtonCreateUser() {
+    public LoginRegistrationPage clickButtonCreateUser() {
         buttonCreateUser.click();
+        return this;
     }
 
     public boolean isRegistrationPage() {
         return exists(buttonCreateUser);
     }
 
-    public void clickButtonCancel() {
+    public LoginRegistrationPage clickButtonCancel() {
         buttonCancel.click();
+        return this;
     }
 
-    public void clickButtonBuyer() {
+    public LoginRegistrationPage clickButtonBuyer() {
       buttonBuyer.click();
+      return this;
     }
 
-    public void clickButtonCancelRegistration() {
+    public LoginRegistrationPage clickButtonCancelRegistration() {
         buttonCancelRegistration.click();
+        return  this;
     }
 }
