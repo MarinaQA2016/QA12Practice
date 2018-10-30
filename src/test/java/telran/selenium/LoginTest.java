@@ -3,8 +3,10 @@ package telran.selenium;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.stqa.selenium.factory.WebDriverPool;
 import telran.selenium.pages.HomePageHelper;
 import telran.selenium.pages.LoginPage;
 import telran.selenium.pages.LoginRegistrationPage;
@@ -20,7 +22,7 @@ public class LoginTest extends TestBase {
     private LoginPage loginPage;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initPageObjects() {
         homepage = PageFactory.initElements(driver, HomePageHelper.class);
         marketPlace = PageFactory.initElements(driver, MarketPlacePageHelper_Marina.class);
@@ -34,7 +36,9 @@ public class LoginTest extends TestBase {
         marketPlace.clickLoginRegistrationButton();
 
     }
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
+
+
+    @Test (groups = {"smoke", "regression"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
     public void authorizationSeller(String email, String password){
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
@@ -45,7 +49,7 @@ public class LoginTest extends TestBase {
 
     }
 
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
+    @Test (groups = {"buyer","smoke"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
     public void authorizationBuyer(String email, String password) {
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
@@ -55,7 +59,7 @@ public class LoginTest extends TestBase {
         Assert.assertTrue(loginPage.isLoginPage()&&loginPage.isUserRole().equals("покупатель"));
     }
 
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
+    @Test (groups = {"smoke"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
     public void authorizationAdmin(String email, String password) {
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
@@ -64,7 +68,7 @@ public class LoginTest extends TestBase {
         loginPage.waitUntilPageLoaded();
         Assert.assertTrue(loginPage.isLoginPage()&&loginPage.isUserRole().equals("администратор"));
     }
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
+    @Test (groups = {"smoke"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationSeller")
     public void authorizationAndCancelSeller(String email, String password) {
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
@@ -73,7 +77,7 @@ public class LoginTest extends TestBase {
         loginPage.waitUntilPageIsLoadedCanсel();
         Assert.assertTrue(loginPage.isLoginPageCanсel());
     }
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
+    @Test (groups = {"smoke"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationBuyer")
     public void authorizationAndCancelBuyer(String email, String password) {
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
@@ -82,7 +86,7 @@ public class LoginTest extends TestBase {
         loginPage.waitUntilPageIsLoadedCanсel();
         Assert.assertTrue(loginPage.isLoginPageCanсel());
     }
-    @Test (dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
+    @Test (groups = {"smoke"}, dataProviderClass = DataProviders.class, dataProvider = "positiveAuthorizationAdmin")
     public void authorizationAndCancelAdmin(String email, String password) {
         loginRegistrationPage.waitUntilPageLoaded()
                              .putTextToFieldEmail(email)
